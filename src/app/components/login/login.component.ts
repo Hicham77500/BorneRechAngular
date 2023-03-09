@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: LoginService) {
   }
   ngOnInit(): void {
-    this.
+  
     this.onLogin();
     console.log('je suis dans logincomponent');
 
