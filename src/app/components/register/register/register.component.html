@@ -1,0 +1,124 @@
+<form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm.value)">
+  <div class="form-floating mb-3">
+    <input
+      ngModel
+      name="username"
+      type="text"
+      class="form-control"
+      id="floatingInput"
+      placeholder="pseudo"
+    />
+    <label for="floatingInput">Pseudo</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      ngModel
+      name="email"
+      type="email"
+      class="form-control"
+      id="floatingInput"
+      placeholder="name@example.com"
+    />
+    <label for="floatingInput">Email address</label>
+  </div>
+  <div class="form-floating">
+    <input
+      ngModel
+      name="password"
+      type="password"
+      class="form-control"
+      id="floatingPassword"
+      placeholder="Password"
+    />
+    <label for="floatingPassword">Password</label>
+  </div>
+  <div class="form-floating">
+    <input
+      ngModel
+      name="plainPassword"
+      type="password"
+      class="form-control"
+      id="floatingPassword"
+      placeholder="Confirmer le mot de passe"
+    />
+    <label for="floatingPassword">Confirmer le mot de passe</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      ngModel
+      name="lastname"
+      type="text"
+      class="form-control"
+      id="floatingInput"
+      placeholder="nom"
+    />
+    <label for="floatingInput">Nom</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      ngModel
+      name="firstname"
+      type="text"
+      class="form-control"
+      id="floatingInput"
+      placeholder="prenom"
+    />
+    <label for="floatingInput">prenom</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      ngModel
+      name="street"
+      type="text"
+      class="form-control"
+      id="floatingInput"
+      placeholder="rue"
+    />
+    <label for="floatingInput">rue</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      ngModel
+      name="postalcode"
+      type="text"
+      class="form-control"
+      id="floatingInput"
+      placeholder="Code postal"
+    />
+    <label for="floatingInput">Code postal</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      ngModel
+      name="city"
+      type="text"
+      class="form-control"
+      id="floatingInput"
+      placeholder="Ville"
+    />
+    <label for="floatingInput">Ville</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      ngModel
+      name="numtel"
+      type="text"
+      class="form-control"
+      id="floatingInput"
+      placeholder="Numero de tel"
+    />
+    <label for="floatingInput">Numero de tel</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      ngModel
+      name="carbrand"
+      type="text"
+      class="form-control"
+      id="floatingInput"
+      placeholder="Marque de voiture"
+    />
+    <label for="floatingInput">Marque de voiture</label>
+  </div>
+  <button type="submit">Envoyer</button>
+</form>
