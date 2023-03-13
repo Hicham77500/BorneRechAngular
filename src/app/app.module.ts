@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register/register/register.component';
+import { NotificationModule } from './notification.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { RegisterComponent } from './components/register/register/register.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NotificationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
