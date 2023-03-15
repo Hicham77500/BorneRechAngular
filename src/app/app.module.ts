@@ -7,14 +7,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register/register/register.component';
-import { NotificationModule } from './notification.module';
+import { NotificationModule } from './services/notification/notification.module';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

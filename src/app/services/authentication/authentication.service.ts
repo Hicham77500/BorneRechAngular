@@ -22,7 +22,7 @@ export class AuthenticationService {
     return this.http.post<User | HttpErrorResponse>(AppSettings.APP_URL + '/api/users', user)
   }
   public login(user: User) {
-    return this.http.post<IToken>(AppSettings.APP_URL + '/api/login_check', user)
+    return this.http.post<any>(AppSettings.APP_URL + '/api/login_check', user)
   }
 
   public logOut() {
@@ -34,7 +34,8 @@ export class AuthenticationService {
     //localStorage.removeItem('users');
   }
   public saveToken(token: string): void {
-    this.token = token; localStorage.setItem('token', token);
+    this.token = token;
+    localStorage.setItem('token', token);
   }
   public addUserToLocalCache(user: User): void {
     localStorage.setItem('user', JSON.stringify(user));
@@ -50,21 +51,35 @@ export class AuthenticationService {
   public getToken(): string {
     return this.token;
   }
+  public decodeToken(token: string){
+    return this.jwtHelper.decodeToken(token);
+  }
+  public isUserAdmin() :boolean{
+
+    let token = this.getToken()
+   if (this.decodeToken(token).roles[0] == 'ROLE_ADMIN') {
+    return true
+   }
+    return false
+
+
+  }
   /* Vérifie si l'utilisateur est connecté  */
   public isUserLoggedIn(): boolean {
-   
+
     const tok = this.token;
-    
+
 
 
     if (tok != null && tok !== '') {
-     
+
       if (this.jwtHelper.decodeToken(tok).username != null || '') {
-       
+
 
         if (!this.jwtHelper.isTokenExpired(tok)) {
-        
+
           this.loggedInUsername = this.jwtHelper.decodeToken(tok).username;
+          console.log(this.jwtHelper.decodeToken(tok))
           console.log("Résultat this.loogedInUSername (decoded token) : [ " + this.loggedInUsername + " ] Authentication > isLoggedIn()");
           return true;
         }
