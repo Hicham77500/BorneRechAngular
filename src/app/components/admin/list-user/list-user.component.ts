@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NotificationType } from 'src/app/enum/notification-type.enum';
 import { User } from 'src/app/models/user';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
@@ -8,24 +8,44 @@ import { NotificationService } from 'src/app/services/notification/notification.
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-list-user',
+  templateUrl: './list-user.component.html',
+  styleUrls: ['./list-user.component.css']
 })
-export class AdminComponent implements OnInit{
+export class ListUserComponent implements OnInit{
+  declare users:any; 
+  declare id: number;
   constructor(
     private authenticationService: AuthenticationService,
+    private userService: UserService,
     private router: Router,
-    private notificationService: NotificationService,
-    private userService: UserService
+    private route: ActivatedRoute,
+    private notificationService: NotificationService
   ) {
 
   }
   ngOnInit(): void {
+    // this.authenticationService.isUserLoggedIn() 
+       this.getUsers();
+       if (this.id !=null) {
+        this.onDeleteUser(this.id)
+       }
+       
+     }
+   public getUsers(){
+    this.userService.getUsers().subscribe(
+     (data: any) =>{ this.users = data["hydra:member"]
+      console.log(data["hydra:member"])
+         //   //this.router.navigateByUrl('/login');
+     },
+   
+         (err: HttpErrorResponse) => this.notificationService.notify(NotificationType.ERROR, err.error['hydra:description'])
     
-  }
-
-  public onDeleteUser(id: number){
+    
+    )
+    
+   }
+   public onDeleteUser(id: number){
     this.userService.deleteUser(id).subscribe(
       () => {this.notificationService.notify(NotificationType.SUCCESS, "Votre compte a été supprimé avec succés")
       this.router.navigate(['/admin'])}
@@ -35,5 +55,4 @@ export class AdminComponent implements OnInit{
     )
    }
 
-  
 }

@@ -8,32 +8,36 @@ import { NotificationService } from 'src/app/services/notification/notification.
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-add-user',
+  templateUrl: './add-user.component.html',
+  styleUrls: ['./add-user.component.css']
 })
-export class AdminComponent implements OnInit{
+export class AddUserComponent implements OnInit {
+
   constructor(
     private authenticationService: AuthenticationService,
+    private userService: UserService,
     private router: Router,
-    private notificationService: NotificationService,
-    private userService: UserService
+    private notificationService: NotificationService
   ) {
 
   }
+
   ngOnInit(): void {
-    
+   
   }
+  public onAddUser(user: User) {
 
-  public onDeleteUser(id: number){
-    this.userService.deleteUser(id).subscribe(
-      () => {this.notificationService.notify(NotificationType.SUCCESS, "Votre compte a été supprimé avec succés")
-      this.router.navigate(['/admin'])}
-       ,
-    
-       (err: HttpErrorResponse) => this.notificationService.notify(NotificationType.ERROR, err.error['hydra:description'])
+    this.userService.addUser(user).subscribe(
+
+
+      (data: any) => {this.notificationService.notify(NotificationType.SUCCESS, "Votre compte a été crée avec succés")
+     this.router.navigateByUrl('/admin');}
+      ,
+
+      (err: HttpErrorResponse) => this.notificationService.notify(NotificationType.ERROR, err.error['hydra:description'])
     )
-   }
 
-  
+
+  }
 }

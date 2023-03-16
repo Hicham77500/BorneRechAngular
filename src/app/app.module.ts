@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register/register/register.component';
 import { NotificationModule } from './services/notification/notification.module';
 import { AdminComponent } from './components/admin/admin.component';
+import { AddUserComponent } from './components/admin/add-user/add-user.component';
+import { EditUserComponent } from './components/admin/edit-user/edit-user.component';
+import { ListUserComponent } from './components/admin/list-user/list-user.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { AdminComponent } from './components/admin/admin.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    AdminComponent
+    AdminComponent,
+    AddUserComponent,
+    EditUserComponent,
+    ListUserComponent
   ],
   imports: [
     BrowserModule,

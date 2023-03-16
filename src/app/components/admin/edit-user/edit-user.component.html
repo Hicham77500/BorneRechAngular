@@ -1,0 +1,88 @@
+<form #editUserForm="ngForm" (ngSubmit)="onEdit(editUserForm.value)">
+  <div class="form-floating mb-3">
+    <input
+      [(ngModel)]="editUser.username"
+      name="username"
+      type="text"
+      class="form-control"
+    />
+    <label for="floatingInput">Pseudo</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      [(ngModel)]="editUser.email"
+      name="email"
+      type="email"
+      class="form-control"
+    />
+    <label for="floatingInput">Email address</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input
+      [(ngModel)]="editUser.lastname"
+      name="lastname"
+      type="text"
+      class="form-control"
+    />
+    <label for="floatingInput">Nom</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      [(ngModel)]="editUser.firstname"
+      name="firstname"
+      type="text"
+      class="form-control"
+    />
+    <label for="floatingInput">prenom</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      [(ngModel)]="editUser.street"
+      name="street"
+      type="text"
+      class="form-control"
+    />
+    <label for="floatingInput">rue</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      [(ngModel)]="editUser.postalcode"
+      name="postalcode"
+      type="text"
+      class="form-control"
+      id="floatingInput"
+    />
+    <label for="floatingInput">Code postal</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      [(ngModel)]="editUser.city"
+      name="city"
+      type="text"
+      class="form-control"
+    />
+    <label for="floatingInput">Ville</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      [(ngModel)]="editUser.numtel"
+      name="numtel"
+      type="text"
+      class="form-control"
+    />
+    <label for="floatingInput">Numero de tel</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      [(ngModel)]="editUser.carbrand"
+      name="carbrand"
+      type="text"
+      class="form-control"
+    />
+    <label for="floatingInput">Marque de voiture</label>
+  </div>
+  <button type="submit">Envoyer</button>
+</form>
+
+{{ editUserForm.value | json }}
