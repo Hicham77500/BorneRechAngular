@@ -12,8 +12,8 @@ import { UserService } from 'src/app/services/user/user.service';
   templateUrl: './list-user.component.html',
   styleUrls: ['./list-user.component.css']
 })
-export class ListUserComponent implements OnInit{
-  declare users:any; 
+export class ListUserComponent implements OnInit {
+  declare users: any;
   declare id: number;
   constructor(
     private authenticationService: AuthenticationService,
@@ -25,34 +25,31 @@ export class ListUserComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    // this.authenticationService.isUserLoggedIn() 
-       this.getUsers();
-       if (this.id !=null) {
-        this.onDeleteUser(this.id)
-       }
-       
-     }
-   public getUsers(){
-    this.userService.getUsers().subscribe(
-     (data: any) =>{ this.users = data["hydra:member"]
-      console.log(data["hydra:member"])
-         //   //this.router.navigateByUrl('/login');
-     },
-   
-         (err: HttpErrorResponse) => this.notificationService.notify(NotificationType.ERROR, err.error['hydra:description'])
-    
-    
-    )
-    
-   }
-   public onDeleteUser(id: number){
-    this.userService.deleteUser(id).subscribe(
-      () => {this.notificationService.notify(NotificationType.SUCCESS, "Votre compte a été supprimé avec succés")
-      this.router.navigate(['/admin'])}
-       ,
-    
-       (err: HttpErrorResponse) => this.notificationService.notify(NotificationType.ERROR, err.error['hydra:description'])
-    )
-   }
 
+    this.getUsers();
+    if (this.route.snapshot.paramMap.get('id') != null) {
+      this.remove();
+    }
+
+  }
+  public getUsers() {
+    return this.userService.getUsers().subscribe(
+      (data: any) => {
+        this.users = data["hydra:member"]
+        console.log(data["hydra:member"])
+      },
+      (err: HttpErrorResponse) => this.notificationService.notify(NotificationType.ERROR, err.error['hydra:description'])
+
+
+    )
+
+  }
+  remove() {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.userService.deleteUser(id).subscribe(
+      () => {
+        this.router.navigateByUrl('/admin')
+      }
+    )
+  }
 }

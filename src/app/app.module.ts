@@ -12,6 +12,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AddUserComponent } from './components/admin/add-user/add-user.component';
 import { EditUserComponent } from './components/admin/edit-user/edit-user.component';
 import { ListUserComponent } from './components/admin/list-user/list-user.component';
+import { AuthGuard } from './guard/auth.guard.fn';
+
 
 
 @NgModule({
@@ -31,7 +33,7 @@ import { ListUserComponent } from './components/admin/list-user/list-user.compon
     FormsModule,
     NotificationModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

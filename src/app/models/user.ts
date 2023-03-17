@@ -12,19 +12,8 @@ export class User {
     public carbrand: string;
     public username: string;
     constructor(
-        id: number,
-        email: string,
-        plainPassword: string,
-        password: string,
-        lastname: string,
-        firstname: string,
-        street: string,
-        postalcode: string,
-        city: string,
-        numtel: string,
-        carbrand: string,
-        username: string) {
-        this.id = id;
+        ) {
+        this.id = 0;
         this.email = '';
         this.plainPassword = '';
         this.password = '';

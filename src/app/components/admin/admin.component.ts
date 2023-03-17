@@ -12,7 +12,8 @@ import { UserService } from 'src/app/services/user/user.service';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent implements OnInit{
+export class AdminComponent implements OnInit {
+  declare users: any;
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router,
@@ -22,18 +23,8 @@ export class AdminComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    
+   
   }
-
-  public onDeleteUser(id: number){
-    this.userService.deleteUser(id).subscribe(
-      () => {this.notificationService.notify(NotificationType.SUCCESS, "Votre compte a été supprimé avec succés")
-      this.router.navigate(['/admin'])}
-       ,
-    
-       (err: HttpErrorResponse) => this.notificationService.notify(NotificationType.ERROR, err.error['hydra:description'])
-    )
-   }
 
   
 }

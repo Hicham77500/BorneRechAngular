@@ -6,7 +6,8 @@ import { EditUserComponent } from './components/admin/edit-user/edit-user.compon
 import { ListUserComponent } from './components/admin/list-user/list-user.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register/register.component';
-import { AuthenticationGuard } from './guard/authentication.guard';
+import { AuthGuard } from './guard/auth.guard.fn';
+
 
 const routes: Routes = [
   {
@@ -18,20 +19,21 @@ const routes: Routes = [
   },{
     path: 'admin',
     component: AdminComponent,
-   // canActivate:[AuthenticationGuard]
+    canActivate:[AuthGuard]
   },{
     path: 'admin/add',
     component: AddUserComponent,
-   // canActivate:[AuthenticationGuard]
+
   },{
     path: 'admin/edit/:id',
     component: EditUserComponent,
-   // canActivate:[AuthenticationGuard]
+
   },{
-    path: 'admin/list',
+    path: 'admin/:id',
     component: ListUserComponent,
-   // canActivate:[AuthenticationGuard]
+
   }
+  
 
 ];
 

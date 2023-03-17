@@ -57,27 +57,22 @@ export class AuthenticationService {
   public isUserAdmin() :boolean{
 
     let token = this.getToken()
+    
    if (this.decodeToken(token).roles[0] == 'ROLE_ADMIN') {
+    
     return true
    }
+   
     return false
 
 
   }
   /* Vérifie si l'utilisateur est connecté  */
   public isUserLoggedIn(): boolean {
-
     const tok = this.token;
-
-
-
     if (tok != null && tok !== '') {
-
       if (this.jwtHelper.decodeToken(tok).username != null || '') {
-
-
         if (!this.jwtHelper.isTokenExpired(tok)) {
-
           this.loggedInUsername = this.jwtHelper.decodeToken(tok).username;
           console.log(this.jwtHelper.decodeToken(tok))
           console.log("Résultat this.loogedInUSername (decoded token) : [ " + this.loggedInUsername + " ] Authentication > isLoggedIn()");

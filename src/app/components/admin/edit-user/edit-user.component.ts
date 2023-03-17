@@ -13,7 +13,7 @@ import { UserService } from 'src/app/services/user/user.service';
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
-declare editUser : User
+  public editUser = new User() ;
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,
@@ -25,25 +25,29 @@ declare editUser : User
   }
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(id);
-    this.userService.getUser(id).subscribe(
-      (data: User) =>{
+    this.userService.getUser(id).pipe().subscribe({
+      next: (data: User) => {
         this.editUser = data
-       console.log(this.editUser)
-}
+        console.log(this.editUser)
+      },
+      complete: () => console.log('ok')
+
+    }
     )
   }
-onEdit(user :User) {
-  const id = Number(this.route.snapshot.paramMap.get('id'));
-this.userService.editUser(id,user).subscribe(
-  (data: any) => {this.notificationService.notify(NotificationType.SUCCESS, "Votre compte a été mise à jour avec succés")
-  this.router.navigateByUrl('/admin');}
-   ,
+  onEdit(user: User) {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.userService.editUser(id, user).subscribe(
+      (data: any) => {
+        this.notificationService.notify(NotificationType.SUCCESS, "Votre compte a été mise à jour avec succés")
+        this.router.navigateByUrl('/admin');
+      }
+      ,
 
-   (err: HttpErrorResponse) => this.notificationService.notify(NotificationType.ERROR, err.error['hydra:description'])
- )
+      (err: HttpErrorResponse) => this.notificationService.notify(NotificationType.ERROR, err.error['hydra:description'])
+    )
 
 
-}
+  }
 
 }
