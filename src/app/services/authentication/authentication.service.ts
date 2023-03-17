@@ -28,10 +28,9 @@ export class AuthenticationService {
   public logOut() {
     this.token = '';
     this.loggedInUsername = '';
-    //this.tok = ''; 
-    //localStorage.removeItem('user');
+  
     localStorage.removeItem('token');
-    //localStorage.removeItem('users');
+    localStorage.removeItem('role');
   }
   public saveToken(token: string): void {
     this.token = token;

@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    console.log(this.authenticationService.isUserLoggedIn());
+ this.authenticationService.logOut()
      
   }
 
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       }}
       
     })
- console.log(this.authenticationService.isUserLoggedIn());
+
   }
   
 }

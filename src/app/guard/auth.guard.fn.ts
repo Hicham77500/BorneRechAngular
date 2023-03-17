@@ -18,7 +18,7 @@ import { NotificationType } from "../enum/notification-type.enum";
       | Promise<boolean | UrlTree>
       | boolean
       | UrlTree {
-      if(localStorage.getItem('role') == 'ROLE_ADMIN'){
+      if(this.authService.getRole() == 'ROLE_ADMIN'){
         return true;
       }
         return false;
