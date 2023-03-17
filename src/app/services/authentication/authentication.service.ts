@@ -14,6 +14,7 @@ export class AuthenticationService {
   declare private loggedInUsername: string;
   private jwtHelper = new JwtHelperService();
   declare private tok: string;
+  declare isAdmin:boolean;
   constructor(private http: HttpClient) {
 
   }
@@ -59,10 +60,10 @@ export class AuthenticationService {
     let token = this.getToken()
     
    if (this.decodeToken(token).roles[0] == 'ROLE_ADMIN') {
-    
+    this.isAdmin = true;
     return true
    }
-   
+   this.isAdmin = false;
     return false
 
 

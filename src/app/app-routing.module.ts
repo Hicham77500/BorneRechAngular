@@ -23,14 +23,17 @@ const routes: Routes = [
   },{
     path: 'admin/add',
     component: AddUserComponent,
+    canActivate:[AuthGuard]
 
   },{
     path: 'admin/edit/:id',
     component: EditUserComponent,
+    canActivate:[AuthGuard]
 
   },{
     path: 'admin/:id',
     component: ListUserComponent,
+    canActivate:[AuthGuard]
 
   }
   
