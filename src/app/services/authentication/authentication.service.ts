@@ -14,7 +14,6 @@ export class AuthenticationService {
   declare private loggedInUsername: string;
   private jwtHelper = new JwtHelperService();
   declare private tok: string;
-  declare isAdmin:boolean;
   constructor(private http: HttpClient) {
 
   }
@@ -55,18 +54,13 @@ export class AuthenticationService {
   public decodeToken(token: string){
     return this.jwtHelper.decodeToken(token);
   }
-  public isUserAdmin() :boolean{
-
-    let token = this.getToken()
-    
-   if (this.decodeToken(token).roles[0] == 'ROLE_ADMIN') {
-    this.isAdmin = true;
-    return true
-   }
-   this.isAdmin = false;
-    return false
-
-
+  public saveRole() :void{
+    localStorage.setItem('role', this.decodeToken(this.token).roles[0])
+ 
+  }
+  public getRole() {
+    return localStorage.getItem('role')
+ 
   }
   /* Vérifie si l'utilisateur est connecté  */
   public isUserLoggedIn(): boolean {

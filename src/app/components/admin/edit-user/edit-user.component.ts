@@ -36,6 +36,11 @@ export class EditUserComponent implements OnInit {
     )
   }
   onEdit(user: User) {
+    if(user){
+      let tab:string[] = [];
+      tab.push(user.role)
+      user.roles = tab
+    }
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.userService.editUser(id, user).subscribe(
       (data: any) => {

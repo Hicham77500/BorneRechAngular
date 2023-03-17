@@ -11,6 +11,8 @@ export class User {
     public numtel: string;
     public carbrand: string;
     public username: string;
+    public roles: string[];
+    public role: string;
     constructor(
         ) {
         this.id = 0;
@@ -25,6 +27,7 @@ export class User {
         this.numtel = '';
         this.carbrand = '';
         this.username = '';
-
+        this.roles = [];
+        this.role = '';    
     }
 }

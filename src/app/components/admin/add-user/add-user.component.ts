@@ -27,7 +27,11 @@ export class AddUserComponent implements OnInit {
    
   }
   public onAddUser(user: User) {
-
+    if(user){
+      let tab:string[] = [];
+      tab.push(user.role)
+      user.roles = tab
+    }
     this.userService.addUser(user).subscribe(
       (data: any) => {this.notificationService.notify(NotificationType.SUCCESS, "Votre compte a été crée avec succés")
      this.router.navigateByUrl('/admin');}

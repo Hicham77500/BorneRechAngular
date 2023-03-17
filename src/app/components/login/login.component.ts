@@ -33,10 +33,11 @@ export class LoginComponent implements OnInit {
 
   public onLogin(user: User) {
     this.authenticationService.login(user).subscribe({
-      next:(data: IToken) =>this.authenticationService.saveToken(data.token) ,
+      next:(data: IToken) =>{this.authenticationService.saveToken(data.token) 
+      this.authenticationService.saveRole()},
       error:(err: HttpErrorResponse) => this.notificationService.notify(NotificationType.ERROR, err.error['message']),
       
-      complete:()=>{if(this.authenticationService.isUserAdmin()){
+      complete:()=>{if(this.authenticationService.getRole() == 'ROLE_ADMIN'){
         this.router.navigateByUrl("/admin")
       
       }else{
