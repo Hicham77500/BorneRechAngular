@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -14,6 +14,7 @@ import { ListUserComponent } from './components/admin/list-user/list-user.compon
 import { NotificationService } from './services/notification/notification.service';
 import { AuthenticationService } from './services/authentication/authentication.service';
 import { UserService } from './services/user/user.service';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 
 
@@ -35,7 +36,11 @@ import { UserService } from './services/user/user.service';
     FormsModule,
     NotificationModule
   ],
-  providers: [NotificationService,AuthenticationService,UserService],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
