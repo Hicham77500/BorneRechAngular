@@ -3,6 +3,8 @@ export class User {
     public email: string;
     public plainPassword: string;
     public password: string;
+    public genre: string;
+    public alias: string;
     public lastname: string;
     public firstname: string;
     public street: string;
@@ -10,7 +12,7 @@ export class User {
     public city: string;
     public numtel: string;
     public carbrand: string;
-    public username: string;
+    public carmodel: string;
     public roles: string[];
     public role: string;
     constructor(
@@ -19,6 +21,8 @@ export class User {
         this.email = '';
         this.plainPassword = '';
         this.password = '';
+        this.genre = '';
+        this.alias = '';
         this.lastname = '';
         this.firstname = '';
         this.street = '';
@@ -26,7 +30,8 @@ export class User {
         this.city = '';
         this.numtel = '';
         this.carbrand = '';
-        this.username = '';
+        this.carmodel = '';
+        
         this.roles = [];
         this.role = '';    
     }

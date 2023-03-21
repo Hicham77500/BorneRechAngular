@@ -6,25 +6,29 @@
 <table id="table_id" class="table ">
     <thead>
         <tr>
-            <th scope="col">id</th> 
-            <th scope="col">Username</th>
+            <th scope="col">Id</th> 
             <th scope="col">Email</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Username</th>
             <th scope="col">LastName</th>
             <th scope="col">FirstName</th>
             <th scope="col">NumTel</th>
             <th scope="col">Marque de voiture</th>
+            <th scope="col">Modèle de voiture</th>
             <th scope="col">ACTION</th>
         </tr>
     </thead>
     <tbody>
     <tr *ngFor="let item of users">
         <th scope="row"> {{item.id}}</th>
-        <td scope="row">{{item.username}}</td>
         <td scope="row">{{item.email}}</td>
+        <td scope="row">{{item.genre}}</td>
+        <td scope="row">{{item.alias}}</td>
         <td scope="row">{{item.lastname}}</td>
         <td scope="row">{{item.firstname}}</td>
         <td scope="row">{{item.numtel}}</td>
         <td scope="row">{{item.carbrand}}</td>
+        <td scope="row">{{item.carmodel}}</td>
 
         <td><a  routerLink="/admin/edit/{{item.id}}" class="btn btn-warning waves-effect waves-light btn right #e65100 green">Edit</a>
         </td>
