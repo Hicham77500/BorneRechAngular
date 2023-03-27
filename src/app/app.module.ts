@@ -15,6 +15,8 @@ import { NotificationService } from './services/notification/notification.servic
 import { AuthenticationService } from './services/authentication/authentication.service';
 import { UserService } from './services/user/user.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { IndexComponent } from './components/index/index.component';
+import { MapComponent } from './components/map/map.component';
 
 
 
@@ -27,7 +29,9 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     AdminComponent,
     AddUserComponent,
     EditUserComponent,
-    ListUserComponent
+    ListUserComponent,
+    IndexComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

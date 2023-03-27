@@ -4,7 +4,9 @@ import { AddUserComponent } from './components/admin/add-user/add-user.component
 import { AdminComponent } from './components/admin/admin.component';
 import { EditUserComponent } from './components/admin/edit-user/edit-user.component';
 import { ListUserComponent } from './components/admin/list-user/list-user.component';
+import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
+import { MapComponent } from './components/map/map.component';
 import { RegisterComponent } from './components/register/register/register.component';
 import { AuthenticationService } from './services/authentication/authentication.service';
 
@@ -20,6 +22,18 @@ const authGuardAdminFn: CanActivateFn = () => {
  
 }
 const routes: Routes = [
+  {
+    path: 'index',
+    component: IndexComponent,
+    // canActivate:[AuthGuard]
+
+  },
+  {
+    path: 'map',
+    component: MapComponent,
+    // canActivate:[AuthGuard]
+
+  },
   {
     path: 'login',
     component: LoginComponent
