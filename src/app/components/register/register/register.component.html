@@ -1,4 +1,6 @@
+<app-header></app-header>
 <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm.value)">
+  <label for="floatingInput">Pseudo</label>
   <div class="form-floating mb-3">
     <input
       ngModel
@@ -8,8 +10,8 @@
       id="floatingInput"
       placeholder="pseudo"
     />
-    <label for="floatingInput">Pseudo</label>
   </div>
+  <label for="floatingInput">Email address</label>
   <div class="form-floating mb-3">
     <input
       ngModel
@@ -19,8 +21,8 @@
       id="floatingInput"
       placeholder="name@example.com"
     />
-    <label for="floatingInput">Email address</label>
   </div>
+  <label for="floatingPassword">Password</label>
   <div class="form-floating">
     <input
       ngModel
@@ -30,8 +32,8 @@
       id="floatingPassword"
       placeholder="Password"
     />
-    <label for="floatingPassword">Password</label>
   </div>
+  <label for="floatingPassword">Confirmer le mot de passe</label>
   <div class="form-floating">
     <input
       ngModel
@@ -41,8 +43,8 @@
       id="floatingPassword"
       placeholder="Confirmer le mot de passe"
     />
-    <label for="floatingPassword">Confirmer le mot de passe</label>
   </div>
+  <label for="floatingInput">Nom</label>
   <div class="form-floating mb-3">
     <input
       ngModel
@@ -52,8 +54,8 @@
       id="floatingInput"
       placeholder="nom"
     />
-    <label for="floatingInput">Nom</label>
   </div>
+  <label for="floatingInput">Prenom</label>
   <div class="form-floating mb-3">
     <input
       ngModel
@@ -61,10 +63,10 @@
       type="text"
       class="form-control"
       id="floatingInput"
-      placeholder="prenom"
+      placeholder="Prenom"
     />
-    <label for="floatingInput">prenom</label>
   </div>
+  <label for="floatingInput">Rue</label>
   <div class="form-floating mb-3">
     <input
       ngModel
@@ -72,10 +74,10 @@
       type="text"
       class="form-control"
       id="floatingInput"
-      placeholder="rue"
+      placeholder="Rue"
     />
-    <label for="floatingInput">rue</label>
   </div>
+  <label for="floatingInput">Code postal</label>
   <div class="form-floating mb-3">
     <input
       ngModel
@@ -85,8 +87,8 @@
       id="floatingInput"
       placeholder="Code postal"
     />
-    <label for="floatingInput">Code postal</label>
   </div>
+  <label for="floatingInput">Ville</label>
   <div class="form-floating mb-3">
     <input
       ngModel
@@ -96,8 +98,8 @@
       id="floatingInput"
       placeholder="Ville"
     />
-    <label for="floatingInput">Ville</label>
   </div>
+  <label for="floatingInput">Numero de tel</label>
   <div class="form-floating mb-3">
     <input
       ngModel
@@ -107,8 +109,8 @@
       id="floatingInput"
       placeholder="Numero de tel"
     />
-    <label for="floatingInput">Numero de tel</label>
   </div>
+  <label for="floatingInput">Marque de voiture</label>
   <div class="form-floating mb-3">
     <input
       ngModel
@@ -118,7 +120,6 @@
       id="floatingInput"
       placeholder="Marque de voiture"
     />
-    <label for="floatingInput">Marque de voiture</label>
   </div>
   <button type="submit">Envoyer</button>
 </form>

@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { MapComponent } from './components/map/map.component';
 import { RegisterComponent } from './components/register/register/register.component';
 import { AuthenticationService } from './services/authentication/authentication.service';
+import { HeaderComponent } from './components/header/header.component';
 
 const authGuardFn: CanActivateFn = () => {
   const authService = inject(AuthenticationService);
@@ -57,6 +58,11 @@ const routes: Routes = [
   }, {
     path: 'admin/:id',
     component: ListUserComponent,
+    // canActivate:[AuthGuard]
+
+  },{
+    path: 'header',
+    component: HeaderComponent,
     // canActivate:[AuthGuard]
 
   }

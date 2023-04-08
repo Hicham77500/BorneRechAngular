@@ -1,5 +1,9 @@
-<form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm.value)">
+<app-header></app-header>
+
+<form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm.value)"> 
+  <label for="floatingInput">Email address</label>
   <div class="form-floating mb-3">
+   
     <input
       ngModel
       name="email"
@@ -8,8 +12,9 @@
       id="floatingInput"
       placeholder="name@example.com"
     />
-    <label for="floatingInput">Email address</label>
+    
   </div>
+  <label for="floatingPassword">Password</label>
   <div class="form-floating">
     <input
       ngModel
@@ -19,7 +24,7 @@
       id="floatingPassword"
       placeholder="Password"
     />
-    <label for="floatingPassword">Password</label>
+    
     
   </div>
   <button type="submit">Envoyer</button>

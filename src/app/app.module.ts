@@ -17,6 +17,7 @@ import { UserService } from './services/user/user.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { IndexComponent } from './components/index/index.component';
 import { MapComponent } from './components/map/map.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
@@ -31,7 +32,8 @@ import { MapComponent } from './components/map/map.component';
     EditUserComponent,
     ListUserComponent,
     IndexComponent,
-    MapComponent
+    MapComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
