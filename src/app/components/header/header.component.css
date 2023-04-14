@@ -27,5 +27,6 @@ nav {
   
   a:hover {
     background-color: #555;
+    border-radius: 50%;
   }
   

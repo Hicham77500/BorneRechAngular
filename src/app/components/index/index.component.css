@@ -1,0 +1,20 @@
+.btn-group {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    background-color: #343a40; /* couleur sombre */
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    background-color: #6c757d; /* couleur plus claire au survol */
+  }

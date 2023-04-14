@@ -10,6 +10,10 @@ import { MapComponent } from './components/map/map.component';
 import { RegisterComponent } from './components/register/register/register.component';
 import { AuthenticationService } from './services/authentication/authentication.service';
 import { HeaderComponent } from './components/header/header.component';
+import { BorneComponent } from './components/borne/borne.component';
+import { AProposComponent } from './components/a-propos/a-propos.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { ProfilComponent } from './components/profil/profil.component';
 
 const authGuardFn: CanActivateFn = () => {
   const authService = inject(AuthenticationService);
@@ -23,6 +27,30 @@ const authGuardAdminFn: CanActivateFn = () => {
  
 }
 const routes: Routes = [
+  {
+    path: 'profil',
+    component: ProfilComponent,
+    // canActivate:[AuthGuard]
+
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    // canActivate:[AuthGuard]
+
+  },
+  {
+    path: 'apropos',
+    component: AProposComponent,
+    // canActivate:[AuthGuard]
+
+  },
+  {
+    path: 'borne',
+    component: BorneComponent,
+    // canActivate:[AuthGuard]
+
+  },
   {
     path: 'index',
     component: IndexComponent,

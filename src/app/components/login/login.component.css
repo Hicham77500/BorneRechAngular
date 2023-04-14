@@ -1,7 +1,7 @@
 
   form {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 15% auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,4 +40,7 @@
   
   button:hover {
     background-color: #555;
+  }
+  .container{
+    height: 77vh;
   }

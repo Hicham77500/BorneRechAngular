@@ -18,6 +18,12 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { IndexComponent } from './components/index/index.component';
 import { MapComponent } from './components/map/map.component';
 import { HeaderComponent } from './components/header/header.component';
+import { BorneComponent } from './components/borne/borne.component';
+import { AProposComponent } from './components/a-propos/a-propos.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { ProfilComponent } from './components/profil/profil.component';
+
 
 
 
@@ -33,7 +39,12 @@ import { HeaderComponent } from './components/header/header.component';
     ListUserComponent,
     IndexComponent,
     MapComponent,
-    HeaderComponent
+    HeaderComponent,
+    BorneComponent,
+    AProposComponent,
+    FooterComponent,
+    ContactComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,

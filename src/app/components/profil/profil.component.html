@@ -1,9 +1,15 @@
 <app-header></app-header>
-<form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm.value)">
+<form #editUserForm="ngForm" (ngSubmit)="onEdit(editUserForm.value)">
+  <label for="floatingInput">Type de compte</label>
+  <select name="role" [(ngModel)]="editUser.roles[0]">
+    <option value="ROLE_ADMIN">Admin</option>
+    <option value="ROLE_USER">User</option>
+  </select>
+  <br />
   <label for="floatingInput">genre</label>
   <div class="form-floating mb-3">
     <input
-      ngModel="genre"
+      [(ngModel)]="editUser.genre"
       name="genre"
       type="text"
       class="form-control"
@@ -12,134 +18,97 @@
   <label for="floatingInput">Pseudo</label>
   <div class="form-floating mb-3">
     <input
-      ngModel
+      [(ngModel)]="editUser.alias"
       name="alias"
       type="text"
       class="form-control"
-      id="floatingInput"
-      placeholder="pseudo"
     />
   </div>
+
   <label for="floatingInput">Email address</label>
   <div class="form-floating mb-3">
     <input
-      ngModel
+      [(ngModel)]="editUser.email"
       name="email"
       type="email"
       class="form-control"
-      id="floatingInput"
-      placeholder="name@example.com"
     />
   </div>
-  <label for="floatingPassword">Password</label>
-  <div class="form-floating">
-    <input
-      ngModel
-      name="password"
-      type="password"
-      class="form-control"
-      id="floatingPassword"
-      placeholder="Password"
-    />
-  </div>
-  <label for="floatingPassword">Confirmer le mot de passe</label>
-  <div class="form-floating">
-    <input
-      ngModel
-      name="plainPassword"
-      type="password"
-      class="form-control"
-      id="floatingPassword"
-      placeholder="Confirmer le mot de passe"
-    />
-  </div>
+
   <label for="floatingInput">Nom</label>
   <div class="form-floating mb-3">
     <input
-      ngModel
+      [(ngModel)]="editUser.lastname"
       name="lastname"
       type="text"
       class="form-control"
-      id="floatingInput"
-      placeholder="nom"
     />
   </div>
-  <label for="floatingInput">Prenom</label>
+  <label for="floatingInput">prenom</label>
   <div class="form-floating mb-3">
     <input
-      ngModel
+      [(ngModel)]="editUser.firstname"
       name="firstname"
       type="text"
       class="form-control"
-      id="floatingInput"
-      placeholder="Prenom"
     />
   </div>
-  <label for="floatingInput">Rue</label>
+  <label for="floatingInput">rue</label>
   <div class="form-floating mb-3">
     <input
-      ngModel
+      [(ngModel)]="editUser.street"
       name="street"
       type="text"
       class="form-control"
-      id="floatingInput"
-      placeholder="Rue"
     />
   </div>
   <label for="floatingInput">Code postal</label>
   <div class="form-floating mb-3">
     <input
-      ngModel
+      [(ngModel)]="editUser.postalcode"
       name="postalcode"
       type="text"
       class="form-control"
       id="floatingInput"
-      placeholder="Code postal"
     />
   </div>
   <label for="floatingInput">Ville</label>
   <div class="form-floating mb-3">
     <input
-      ngModel
+      [(ngModel)]="editUser.city"
       name="city"
       type="text"
       class="form-control"
-      id="floatingInput"
-      placeholder="Ville"
     />
   </div>
   <label for="floatingInput">Numero de tel</label>
   <div class="form-floating mb-3">
     <input
-      ngModel
+      [(ngModel)]="editUser.numtel"
       name="numtel"
       type="text"
       class="form-control"
-      id="floatingInput"
-      placeholder="Numero de tel"
     />
   </div>
   <label for="floatingInput">Marque de voiture</label>
   <div class="form-floating mb-3">
     <input
-      ngModel
+      [(ngModel)]="editUser.carbrand"
       name="carbrand"
       type="text"
       class="form-control"
-      id="floatingInput"
-      placeholder="Marque de voiture"
     />
   </div>
-  <label for="floatingInput">Model de voiture</label>
+  <label for="floatingInput">Modèle de voiture</label>
   <div class="form-floating mb-3">
     <input
-      ngModel
+      [(ngModel)]="editUser.carmodel"
       name="carmodel"
       type="text"
       class="form-control"
-      id="floatingInput"
-      placeholder="Model de voiture"
     />
   </div>
+
   <button type="submit">Envoyer</button>
 </form>
+

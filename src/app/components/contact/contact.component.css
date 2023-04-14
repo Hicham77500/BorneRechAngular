@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 36px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  input[type=text], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #555;
+  }
+  
+  .contact-info {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .contact-info p {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .contact-info {
+      flex-direction: row;
+    }
+    
+    .contact-info img {
+      max-width: 300px;
+    }
+  }

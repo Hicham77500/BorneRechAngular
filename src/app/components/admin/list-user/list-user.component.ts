@@ -38,9 +38,10 @@ export class ListUserComponent implements OnInit {
         this.users = data["hydra:member"]
         console.log(data["hydra:member"])
       },
-      (err: HttpErrorResponse) =>{ this.notificationService.notify(NotificationType.ERROR, err.error['hydra:description'])
-      console.log(err)
-}
+      (err: HttpErrorResponse) => {
+        this.notificationService.notify(NotificationType.ERROR, err.error['hydra:description'])
+        console.log(err)
+      }
 
     )
 

@@ -39,5 +39,14 @@ export class TokenService {
     }
 
   }
+  public getEmail(){
+   
+    
+    const tok = localStorage.getItem('token'); 
+    
+    //let email = this.jwtHelper.decodeToken(tok);
+    console.log(tok);
+    return "email"
+  }
 }
 

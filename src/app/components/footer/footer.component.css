@@ -1,0 +1,47 @@
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  a:hover {
+    color: #ccc;
+  }
+  
+  .fa-facebook {
+    color: #3b5998;
+  }
+  
+  .fa-twitter {
+    color: #00aced;
+  }
+  
+  .fa-instagram {
+    color: #e4405f;
+  }
+  
+  .fa-linkedin {
+    color: #0077b5;
+  }
+  
+  .fa-youtube {
+    color: #cd201f;
+  }
+  

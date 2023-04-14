@@ -65,6 +65,13 @@ export class AuthenticationService {
     return true;
   }
   
-  
+  isLoggedIn(){
+    const token = localStorage.getItem('token');
+    const isExpired = localStorage.getItem('isExpired');
+    if (!token || !isExpired ) {
+      return false;
+    }
+    return true;
+  }
  
 }

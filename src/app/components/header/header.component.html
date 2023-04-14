@@ -1,10 +1,20 @@
 <nav>
-    <ul>
-      <li> 
-        <a routerLink="/login">Se connecter</a></li>
-      <li><a href="#">À propos</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  <div class="separateur"></div>
+  <ul>
+    <li>
+      <a routerLink="/index">Accueil</a>
+    </li>
+   
+    <li><a routerLink="/map">Trouver ma borne</a></li>
+    <li><a routerLink="/borne">Comparer ma borne</a></li>
+    <li><a routerLink="/contact">Contact</a></li>
+    <li><a routerLink="/apropos">À propos</a></li>
+    <li><a routerLink="/profil">Profil</a></li>
+     <li *ngIf="!isLogged">
+      <a routerLink="/login">Se connecter</a>
+    </li>
+    <li *ngIf="isLogged">
+      <div>Bienvenue Hicham</div>
+    </li>
+  </ul>
+</nav>
+<div class="separateur"></div>
